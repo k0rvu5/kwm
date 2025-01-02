@@ -10,10 +10,12 @@ static const unsigned int gappov    = 10;       /* vert outer gap between window
 static       int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-//static const char *fonts[]          = { "monospace:size=9" };
-//static const char dmenufont[]       = "monospace:size=9";
-static const char *fonts[]          = { "Jetbrains Mono NerdFont:size=9:style=Bold", "monospace:size=12" };
-static const char dmenufont[]       = "Jetbrains Mono NerdFont:size=9:style=Bold";
+/*static const char *fonts[]          = { "monospace:size=9" };*/
+/*static const char dmenufont[]       = "monospace:size=9";*/
+/*static const char *fonts[]          = { "Jetbrains Mono NerdFont:size=9:style=Bold", "monospace:size=9" };*/
+/*static const char dmenufont[]       = "Jetbrains Mono NerdFont:size=9:style=Bold";*/
+static const char *fonts[]          = { "CaskaydiaCove Nerd Font Mono:size=9:style=Bold", "monospace:size=9" };
+static const char dmenufont[]       = "CaskaydiaCove Nerd Font Mono:size=9:style=Bold";
 static const char col_gray1[]       = "#0a0a0a";
 static const char col_gray2[]       = "#262626";
 static const char col_gray3[]       = "#cdd6f4";
@@ -128,8 +130,8 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
-	{ MODKEY,                       XK_space,  setlayout,      {0} },
-	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
+	/*{ MODKEY,                       XK_space,  setlayout,      {0} },*/
+	{ MODKEY,                       XK_w,  togglefloating, {0} },
 	{ MODKEY|ShiftMask,             XK_f,      togglefullscr,  {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
@@ -137,8 +139,8 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
-	{ MODKEY|ShiftMask,             XK_minus, 		setborderpx,    {.i = -1 } },
-	{ MODKEY|ShiftMask,             XK_plus, 		setborderpx,    {.i = +1 } },
+	{ MODKEY|ShiftMask,             XK_minus,  setborderpx,    {.i = -1 } },
+	{ MODKEY|ShiftMask,             XK_equal,  setborderpx,    {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_numbersign, 	setborderpx,    {.i = 0 } },
   { 0,                            XF86XK_MonBrightnessUp,  spawn,  SHCMD ("brightnessctl set 10%+")},
   { 0,                            XF86XK_MonBrightnessDown,spawn,  SHCMD ("brightnessctl set 10%-")},
